@@ -1,0 +1,14 @@
+server:
+  port: 19881
+spring:
+  application:
+    name: guide-user
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+     defaultZone: http://localhost:19880/eureka/
+  instance:
+    instance-id: ${srping.application.name}:${server.port}
+    prefer-ip-address: true
