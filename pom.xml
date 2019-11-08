@@ -20,8 +20,13 @@
     </properties>
 
     <modules>
+        <module>z-guide-common</module>
+        <module>z-guide-zuul</module>
         <module>z-guide-center</module>
         <module>z-guide-user-api</module>
+        <module>z-guide-user-sev</module>
+        <module>z-guide-goods-api</module>
+        <module>z-guide-goods-sev</module>
         <module>z-guide-user-sev</module>
         <module>z-guide-consumer</module>
     </modules>

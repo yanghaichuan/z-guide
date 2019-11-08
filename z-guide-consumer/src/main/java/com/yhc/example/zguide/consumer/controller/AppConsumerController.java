@@ -13,7 +13,7 @@ public class AppConsumerController {
     @Autowired
     private UserHystrixServer userHystrixServer;
 
-    @RequestMapping(value = "/app/getUser",method = RequestMethod.GET)
+    @RequestMapping(value = "/user/getUser",method = RequestMethod.GET)
     public String getUser() {
         UserEntity user = userHystrixServer.getUser();
         System.out.print("123456");

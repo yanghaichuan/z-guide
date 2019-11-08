@@ -23,4 +23,7 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 5000
+            timeoutInMilliseconds: 60000
+ribbon:
+  eureka:
+    enabled: true
