@@ -1,0 +1,22 @@
+server:
+  port: 80
+spring:
+  application:
+    name: guide-zuul
+eureka:
+  client:
+   service-url:
+    defaultZone: http://localhost:19880/eureka/
+zuul:
+  routes:
+    provider-user:
+     path: /user/**
+     serviceId: guide-user
+     stripPrefix: false
+    provider-goods:
+      path: /goods/**
+      serviceId: guide-goods
+      stripPrefix: false
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
