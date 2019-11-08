@@ -1,5 +1,6 @@
 package com.yhc.example.zguide.goods.sev.controller;
 
+import com.yhc.example.zguide.common.util.R;
 import com.yhc.example.zguide.goods.api.mode.GoodsEntity;
 import com.yhc.example.zguide.goods.api.server.GoodsHystrixServer;
 import com.yhc.example.zguide.goods.sev.server.GoodsServer;
@@ -21,12 +22,12 @@ public class GoodsConroller implements GoodsHystrixServer {
     private GoodsServer goodsServer;
 
     @RequestMapping(value = "/goods/list", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
-    public List<GoodsEntity> list() {
+    public R list() {
         UserEntity user = userHystrixServer.getUser();
         List<GoodsEntity> goodsEntityList = goodsServer.list();
         for(GoodsEntity goods:goodsEntityList){
             goods.setUserId(user.getId());
         }
-        return goodsEntityList;
+        return R.data(goodsEntityList);
     }
 }
