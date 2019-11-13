@@ -24,7 +24,6 @@
         <module>z-guide-user-api</module>
         <module>z-guide-user-sev</module>
         <module>z-guide-consumer</module>
-        <module>z-guide-config-server</module>
     </modules>
 
     <dependencies>
