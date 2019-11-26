@@ -8,3 +8,9 @@ spring:
     server:
      git:
        uri: https://github.com/yanghaichuan/z-guide-config.git
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+     defaultZone: http://localhost:19880/eureka/
