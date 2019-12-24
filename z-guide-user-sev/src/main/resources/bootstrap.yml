@@ -2,6 +2,13 @@ spring:
   cloud:
     config:
       name: application-zguide
-      profile: dev
+      profile: test
       label: master
       uri: http://localhost:20002
+    bus:
+      trace:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092

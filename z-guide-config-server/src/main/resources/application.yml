@@ -8,9 +8,20 @@ spring:
     server:
      git:
        uri: https://github.com/yanghaichuan/z-guide-config.git
+   stream:
+     kafka:
+       binder:
+         brokers: localhost:9092
+   bus:
+     trace:
+       enabled: true
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
      defaultZone: http://localhost:19880/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #refresh
