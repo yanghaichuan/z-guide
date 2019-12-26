@@ -13,8 +13,7 @@ spring:
        binder:
          brokers: localhost:9092
    bus:
-     trace:
-       enabled: true
+     enabled: true
 eureka:
   client:
     service-url:
