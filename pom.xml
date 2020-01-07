@@ -31,7 +31,6 @@
         <module>z-guide-consumer</module>
         <module>z-guide-config-client</module>
         <module>z-guide-config-server</module>
-        <module>tx-manager</module>
         <module>z-guide-auth-server</module>
     </modules>
 
