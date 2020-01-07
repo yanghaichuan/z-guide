@@ -1,5 +1,5 @@
 server:
-  port: 20002
+  port: 19890
 spring:
   application:
     name: z-guide-config-sever

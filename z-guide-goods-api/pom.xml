@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yhc.example</groupId>
-        <artifactId>z-guide-common</artifactId>
+        <artifactId>z-guide</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
@@ -20,10 +20,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-openfeign</artifactId>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>com.yhc.example</groupId>

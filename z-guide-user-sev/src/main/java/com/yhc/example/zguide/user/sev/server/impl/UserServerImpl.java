@@ -32,4 +32,14 @@ public class UserServerImpl implements UserServer {
         userEntity.setLoginName("dj2019");
         return userEntity;
     }
+
+    @Override
+    public boolean update(UserEntity user) {
+        boolean flag = false;
+        int i = userDaoMapper.update(user);
+        if(i>0){
+            flag = true;
+        }
+        return flag;
+    }
 }

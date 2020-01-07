@@ -11,4 +11,6 @@ public interface UserServer {
     UserEntity get(Integer id);
 
     UserEntity getUser();
+
+    boolean update(UserEntity user);
 }

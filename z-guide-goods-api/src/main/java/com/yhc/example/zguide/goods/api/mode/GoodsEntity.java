@@ -9,7 +9,7 @@ public class GoodsEntity {
     private String sortName;
     private Double price;
     private Long shopId;
-    private Long shopName;
+    private String shopName;
     private Integer num;
     private Integer state;
     private Date upTime;
@@ -64,11 +64,11 @@ public class GoodsEntity {
         this.shopId = shopId;
     }
 
-    public Long getShopName() {
+    public String getShopName() {
         return shopName;
     }
 
-    public void setShopName(Long shopName) {
+    public void setShopName(String shopName) {
         this.shopName = shopName;
     }
 

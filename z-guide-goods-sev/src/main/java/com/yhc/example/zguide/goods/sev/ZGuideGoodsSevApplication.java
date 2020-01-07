@@ -1,5 +1,6 @@
 package com.yhc.example.zguide.goods.sev;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableCircuitBreaker
 @ComponentScan(basePackages = {"com.yhc.example.zguide.user.api","com.yhc.example.zguide.goods"})
 @EnableFeignClients(basePackages = {"com.yhc.example.zguide.user.api.server"})
+@MapperScan(basePackages = "com.yhc.example.zguide.goods.sev.dao")
 @EnableDiscoveryClient
 public class ZGuideGoodsSevApplication {
 

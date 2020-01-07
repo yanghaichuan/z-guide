@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface GoodsServer {
     public List<GoodsEntity> list();
+
+    public boolean save(GoodsEntity goods);
 }

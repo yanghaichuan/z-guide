@@ -31,4 +31,16 @@
         where id = #{id}
     </select>
 
+    <update id="update" parameterType="com.yhc.example.zguide.user.api.mode.UserEntity">
+        UPDATE `z_guide_user`.`z_user`
+            <set>
+                <if test="loginName">`login_name` = #{loginName},</if>
+                <if test="realName">`real_name` = #{realName},</if>
+                <if test="phone">`phone` = #{phone},</if>
+                <if test="state">`state` = #{state}</if>
+            </set>
+            WHERE
+                `id` = #{id}
+    </update>
+
 </mapper>

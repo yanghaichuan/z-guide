@@ -9,4 +9,6 @@ public interface UserDaoMapper {
     List<UserEntity> list(Map<String,Object> params);
 
     UserEntity get(Integer id);
+
+    int update(UserEntity user);
 }

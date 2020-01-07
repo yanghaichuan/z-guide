@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      name: application-zguide-goods
+      profile: test
+      label: master
+      uri: http://localhost:19890
+    bus:
+      trace:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
