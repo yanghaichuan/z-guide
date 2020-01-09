@@ -2,7 +2,7 @@ server:
   port: 19891
 spring:
   application:
-    name: z-guide-auth-server
+    name: guide-auth-server
   redis:
     host: 127.0.0.1
     port: 6379
