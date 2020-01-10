@@ -1,1 +1,5 @@
-
+server:
+  port: 19893
+spring:
+  application:
+    name: z-guide-ftp

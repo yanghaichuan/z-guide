@@ -11,15 +11,15 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-        id as userId, login_name, real_name, password, state, phone
+        id as userId, login_name as loginName, real_name as realName, password, state, phone
     </sql>
 
-    <select id="getUser" resultMap="BaseResultMap" parameterType="java.util.Map">
+    <select id="getUser" resultType="com.yhc.example.zguide.auth.server.user.modle.UserAuthEntity" parameterType="java.util.Map">
         select
         <include refid="Base_Column_List"/>
         from z_user
         <where>
-            <if test="login_name !=null">and login_name = #{loginName}</if>
+            <if test="loginName !=null">and login_name = #{loginName}</if>
         </where>
     </select>
 

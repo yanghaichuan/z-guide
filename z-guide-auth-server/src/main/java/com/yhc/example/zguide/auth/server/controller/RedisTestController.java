@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -43,5 +44,9 @@ public class RedisTestController {
         String pwdCode = new BCryptPasswordEncoder().encode(pwd);
         System.out.print("value======================================================="+pwdCode);
         return pwdCode;
+    }
+    @RequestMapping("/user")
+    public Principal user(Principal user) {
+        return user;
     }
 }
