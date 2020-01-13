@@ -1,7 +1,0 @@
-spring:
-  cloud:
-    config:
-      name: application-prod
-      profile: prod
-      label: master
-      uri: http://localhost:19890
