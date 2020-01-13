@@ -28,8 +28,6 @@
         <module>z-guide-goods-api</module>
         <module>z-guide-goods-sev</module>
         <module>z-guide-user-sev</module>
-        <module>z-guide-consumer</module>
-        <module>z-guide-config-client</module>
         <module>z-guide-config-server</module>
         <module>z-guide-auth-server</module>
     </modules>
