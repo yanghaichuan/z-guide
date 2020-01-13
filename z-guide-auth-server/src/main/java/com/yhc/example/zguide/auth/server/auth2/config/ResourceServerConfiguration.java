@@ -7,10 +7,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 /**
- * <p>参看：https://github.com/spring-guides/tut-spring-security-and-angular-js/blob/master/oauth2-vanilla/README.adoc</p>
- * Created by Mr.Yangxiufeng on 2017/12/29.
- * Time:10:46
- * ProjectName:Mirco-Service-Skeleton
+ * 加载资源服务器
  */
 @Configuration
 @EnableResourceServer
@@ -25,7 +22,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     }
 
     @Override
-    public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+    public void configure(ResourceServerSecurityConfigurer resources){
         resources.resourceId("auth").stateless(true);
     }
+
+
 }

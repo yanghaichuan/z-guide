@@ -11,15 +11,30 @@ zuul:
   routes:
     provider-user:
      path: /user/**
+     sensitiveHeaders: Cookie,Set-Cookie
      serviceId: guide-user
      stripPrefix: false
     provider-goods:
       path: /goods/**
+      sensitiveHeaders:
       serviceId: guide-goods
       stripPrefix: false
+  add-proxy-headers: true
   host:
     socket-timeout-millis: 10000
     connect-timeout-millis: 10000
 ribbon:
   ReadTimeout: 10000
   ConnectTimeout: 10000
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:19891/aau/user
+#      prefer-token-info: false
+    client:
+     id: client_1
+     client-secret: 123456
+     access-token-uri: http://localhost:19891/aau/oauth/token
+     grant-type: client_credentials,password
+     scope: select

@@ -1,6 +1,5 @@
 package com.yhc.example.zguide.auth.server.auth2.config;
 
-import com.alibaba.fastjson.JSONObject;
 import com.yhc.example.zguide.auth.server.auth2.error.MssWebResponseExceptionTranslator;
 import com.yhc.example.zguide.auth.server.user.server.impl.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,7 +85,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
     }
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-        endpoints.tokenStore(redisTokenStore())
+        endpoints.tokenStore(new MyRedisTokenStore(redisConnectionFactory))
                 .userDetailsService(userDetailsService)
                 .authenticationManager(authenticationManager);
         endpoints.tokenServices(defaultTokenServices());

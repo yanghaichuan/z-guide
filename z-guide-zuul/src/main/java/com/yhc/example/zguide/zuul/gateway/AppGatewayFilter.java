@@ -7,6 +7,9 @@ import com.netflix.zuul.exception.ZuulException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.zuul.util.ZuulRuntimeException;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.oauth2.provider.OAuth2Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ReflectionUtils;
 
@@ -43,7 +46,10 @@ public class AppGatewayFilter extends ZuulFilter {
             jsonObject.put("method",request.getMethod());
             jsonObject.put("contextPath",request.getContextPath());
             jsonObject.put("url",request.getRequestURI());
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            OAuth2Authentication auth = (OAuth2Authentication)SecurityContextHolder.getContext().getAuthentication();
 
+            log.info("send {} request to {}",request.getMethod(),request.getRequestURL().toString());
 //            RequestContext context = RequestContext.getCurrentContext();
 //            ZuulException exception = this.findZuulException(context.getThrowable());
 //            log.error("进入系统异常拦截", exception);
