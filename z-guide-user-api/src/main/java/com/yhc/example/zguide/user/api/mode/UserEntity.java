@@ -6,6 +6,7 @@ public class UserEntity {
     private String loginName;
     private String phone;
     private String password;
+    private Integer state;
 
     public Long getId() {
         return id;
@@ -45,5 +46,13 @@ public class UserEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
     }
 }

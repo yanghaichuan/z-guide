@@ -3,12 +3,38 @@ server:
 spring:
   application:
     name: guide-user
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: 60ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 10000
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
      defaultZone: http://localhost:19880/eureka/
-  instance:
-    instance-id: ${srping.application.name}:${server.port}
-    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yhc.example.zguide.user.sev.dao.UserDaoMapper">
+    <resultMap id="BaseResultMap" type="com.yhc.example.zguide.user.api.mode.UserEntity">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="real_name" property="realName" jdbcType="VARCHAR"/>
+        <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="state" property="state" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, login_name, real_name, password, state, phone
+    </sql>
+
+    <select id="list" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="Base_Column_List"/>
+        from z_user
+        <where>
+            <if test="login_name !=null">and login_name = #{loginName}</if>
+            <if test="real_name !=null">and real_name like concat('%',#{realName},'%')</if>
+        </where>
+    </select>
+
+    <select id="get" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from z_user
+        where id = #{id}
+    </select>
+
+    <update id="update" parameterType="com.yhc.example.zguide.user.api.mode.UserEntity">
+        UPDATE `z_guide_user`.`z_user`
+            <set>
+                <if test="loginName">`login_name` = #{loginName},</if>
+                <if test="realName">`real_name` = #{realName},</if>
+                <if test="phone">`phone` = #{phone},</if>
+                <if test="state">`state` = #{state}</if>
+            </set>
+            WHERE
+                `id` = #{id}
+    </update>
+
+</mapper>

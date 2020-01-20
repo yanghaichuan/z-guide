@@ -1,0 +1,26 @@
+server:
+  port: 19890
+spring:
+  application:
+    name: z-guide-config-sever
+  cloud:
+   config:
+    server:
+     git:
+       uri: https://github.com/yanghaichuan/z-guide-config.git
+   stream:
+     kafka:
+       binder:
+         brokers: localhost:9092
+   bus:
+     enabled: true
+eureka:
+  client:
+    service-url:
+     defaultZone: http://localhost:19880/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"   #refresh

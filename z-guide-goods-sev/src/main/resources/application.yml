@@ -1,0 +1,32 @@
+server:
+  port: 19882
+spring:
+  application:
+    name: guide-goods
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      auto-commit-interval: 100ms
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:19880/eureka/
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
