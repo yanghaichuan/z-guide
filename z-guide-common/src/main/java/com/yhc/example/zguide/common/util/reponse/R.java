@@ -1,4 +1,4 @@
-package com.yhc.example.zguide.common.util;
+package com.yhc.example.zguide.common.util.reponse;
 
 import java.util.HashMap;
 import java.util.Map;

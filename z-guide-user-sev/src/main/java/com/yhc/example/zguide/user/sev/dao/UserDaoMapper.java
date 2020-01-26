@@ -11,4 +11,6 @@ public interface UserDaoMapper {
     UserEntity get(Integer id);
 
     int update(UserEntity user);
+
+    int save(UserEntity user);
 }

@@ -8,19 +8,19 @@ import java.util.List;
  */
 public class PageUtils implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private int total;
+	private Long total;
 	private List<?> rows;
 
-	public PageUtils(List<?> list, int total) {
+	public PageUtils(List<?> list, Long total) {
 		this.rows = list;
 		this.total = total;
 	}
 
-	public int getTotal() {
+	public Long getTotal() {
 		return total;
 	}
 
-	public void setTotal(int total) {
+	public void setTotal(Long total) {
 		this.total = total;
 	}
 
@@ -31,5 +31,4 @@ public class PageUtils implements Serializable {
 	public void setRows(List<?> rows) {
 		this.rows = rows;
 	}
-
 }

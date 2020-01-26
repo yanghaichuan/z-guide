@@ -1,6 +1,6 @@
 package com.yhc.example.zguide.user.sev.server.impl;
 
-import com.yhc.example.zguide.common.util.R;
+import com.yhc.example.zguide.common.util.reponse.R;
 import com.yhc.example.zguide.user.api.mode.AreaEntity;
 import com.yhc.example.zguide.user.sev.config.RedisCacheConfig;
 import com.yhc.example.zguide.user.sev.dao.AreaDaoMapper;

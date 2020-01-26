@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yhc.example.zguide.user.sev.dao.ShopDaoMapper">
+	
+	<select id="listForPage" resultType="com.yhc.example.zguide.user.api.mode.ShopEntity">
+		SELECT
+			`id`, 
+			`shop_name` as shopName,
+			`shop_logo` as shopLogo,
+			`user_id` as userId,
+			`real_name` as realName,
+			`class_id` as classId,
+			`class_name` as className,
+			`status`, 
+			`shop_text` as shopText
+		FROM
+			z_shop
+		ORDER BY
+			id DESC
+	</select>
+	
+	<insert id="save">
+		INSERT INTO z_shop (
+			`id`, 
+			`shop_name`, 
+			`shop_logo`, 
+			`user_id`, 
+			`real_name`, 
+			`class_id`, 
+			`class_name`, 
+			`status`, 
+			`shop_text`
+		)
+		VALUES (
+			#{id}, 
+			#{shopName}, 
+			#{shopLogo}, 
+			#{userId}, 
+			#{realName}, 
+			#{classId}, 
+			#{className}, 
+			#{status}, 
+			#{shopText}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.yhc.example.zguide.user.api.mode.ShopEntity">
+		SELECT
+			`id`, 
+			`shop_name`, 
+			`shop_logo`, 
+			`user_id`, 
+			`real_name`, 
+			`class_id`, 
+			`class_name`, 
+			`status`, 
+			`shop_text`
+		FROM
+			z_shop
+		WHERE
+			id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE z_shop
+	 	<set>
+			<if test="shopName != null">`shop_name` = #{shopName}, </if>
+			<if test="shopLogo != null">`shop_logo` = #{shopLogo}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="realName != null">`real_name` = #{realName}, </if>
+			<if test="classId != null">`class_id` = #{classId}, </if>
+			<if test="className != null">`class_name` = #{className}, </if>
+			<if test="status != null">`status` = #{status}, </if>
+			<if test="shopText != null">`shop_text` = #{shopText}</if>
+		</set>
+		WHERE
+			id = #{id}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			z_shop
+		WHERE
+			id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

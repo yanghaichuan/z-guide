@@ -1,8 +1,7 @@
 package com.yhc.example.zguide.goods.sev.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.yhc.example.zguide.common.util.R;
+import com.yhc.example.zguide.common.util.reponse.R;
 import com.yhc.example.zguide.goods.api.mode.GoodsEntity;
 import com.yhc.example.zguide.goods.api.server.GoodsHystrixServer;
 import com.yhc.example.zguide.goods.sev.kafka.KafkaSender;
@@ -17,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 public class GoodsConroller implements GoodsHystrixServer {

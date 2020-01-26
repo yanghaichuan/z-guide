@@ -1,7 +1,7 @@
 package com.yhc.example.zguide.common.error;
 
 import com.alibaba.fastjson.JSONObject;
-import com.yhc.example.zguide.common.util.R;
+import com.yhc.example.zguide.common.util.reponse.R;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;

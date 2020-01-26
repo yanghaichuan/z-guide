@@ -1,58 +1,91 @@
 package com.yhc.example.zguide.user.api.mode;
 
-public class UserEntity {
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
+import java.io.Serializable;
+import java.util.Date;
+
+@Data
+public class UserEntity implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * ID
+     */
     private Long id;
-    private String realName;
+
+    /**
+     * 登录名
+     */
     private String loginName;
-    private String phone;
+
+    /**
+     * 密码
+     */
     private String password;
+
+    /**
+     * 姓名
+     */
+    private String realName;
+
+    /**
+     * 手机
+     */
+    private String phone;
+
+    /**
+     * 身份证
+     */
+    private String cardId;
+
+    /**
+     * 字典表类型
+     */
+    private Integer userType;
+
+    /**
+     * 状态
+     */
     private Integer state;
 
-    public Long getId() {
-        return id;
-    }
+    /**
+     * 邮箱
+     */
+    private String email;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    /**
+     * 地址
+     */
+    private String address;
 
-    public String getRealName() {
-        return realName;
-    }
+    /**
+     * 创建时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date inputTime;
 
-    public void setRealName(String realName) {
-        this.realName = realName;
-    }
+    /**
+     * 创建人
+     */
+    private Integer inputMan;
 
-    public String getLoginName() {
-        return loginName;
-    }
+    /**
+     * 修改时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date updateTime;
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
-    }
+    /**
+     * 修改人
+     */
+    private String updateMan;
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Integer getState() {
-        return state;
-    }
-
-    public void setState(Integer state) {
-        this.state = state;
-    }
+    /**
+     * 账号有效时间
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date validTime;
 }

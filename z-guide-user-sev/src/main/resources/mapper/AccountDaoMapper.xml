@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yhc.example.zguide.user.sev.dao.AccountDaoMapper">
+	
+	<select id="listForPage" resultType="com.yhc.example.zguide.user.api.mode.AccountEntity">
+		SELECT
+			`id`, 
+			`cash`, 
+			`integral`, 
+			`user_id`, 
+			`input_man`, 
+			`input_time`, 
+			`update_man`, 
+			`update_time`
+		FROM
+			z_account
+		ORDER BY
+			id DESC
+	</select>
+	
+	<insert id="save">
+		INSERT INTO z_account (
+			`id`, 
+			`cash`, 
+			`integral`, 
+			`user_id`, 
+			`input_man`, 
+			`input_time`, 
+			`update_man`, 
+			`update_time`
+		)
+		VALUES (
+			#{id}, 
+			#{cash}, 
+			#{integral}, 
+			#{userId}, 
+			#{inputMan}, 
+			#{inputTime}, 
+			#{updateMan}, 
+			#{updateTime}
+		)
+	</insert>
+	
+	<select id="getObjectById" resultType="com.yhc.example.zguide.user.api.mode.AccountEntity">
+		SELECT
+			`id`, 
+			`cash`, 
+			`integral`, 
+			`user_id`, 
+			`input_man`, 
+			`input_time`, 
+			`update_man`, 
+			`update_time`
+		FROM
+			z_account
+		WHERE
+			id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE z_account
+	 	<set>
+			<if test="cash != null">`cash` = #{cash}, </if>
+			<if test="integral != null">`integral` = #{integral}, </if>
+			<if test="userId != null">`user_id` = #{userId}, </if>
+			<if test="inputMan != null">`input_man` = #{inputMan}, </if>
+			<if test="inputTime != null">`input_time` = #{inputTime}, </if>
+			<if test="updateMan != null">`update_man` = #{updateMan}, </if>
+			<if test="updateTime != null">`update_time` = #{updateTime}</if>
+		</set>
+		WHERE
+			id = #{id}
+	</update>
+	
+	<delete id="batchRemove">
+		DELETE
+		FROM
+			z_account
+		WHERE
+			id IN
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -38,3 +38,10 @@ management:
     web:
       exposure:
         include: refresh
+
+#pagehelper分页插件配置
+pagehelper:
+ helperDialect: mysql
+ reasonable: true
+ supportMethodsArguments: true
+ params: count=countSql

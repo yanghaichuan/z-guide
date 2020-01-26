@@ -1,8 +1,6 @@
 package com.yhc.example.zguide.zuul.error;
 
-import com.netflix.zuul.context.RequestContext;
-import com.netflix.zuul.exception.ZuulException;
-import com.yhc.example.zguide.common.util.R;
+import com.yhc.example.zguide.common.util.reponse.R;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

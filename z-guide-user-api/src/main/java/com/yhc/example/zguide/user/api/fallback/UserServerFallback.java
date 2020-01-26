@@ -1,6 +1,6 @@
 package com.yhc.example.zguide.user.api.fallback;
 
-import com.yhc.example.zguide.common.util.R;
+import com.yhc.example.zguide.common.util.reponse.R;
 import com.yhc.example.zguide.user.api.mode.UserEntity;
 import com.yhc.example.zguide.user.api.server.UserHystrixServer;
 import org.springframework.stereotype.Component;
