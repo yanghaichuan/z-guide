@@ -41,6 +41,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.yhc.example</groupId>
             <artifactId>z-guide-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>

@@ -23,11 +23,6 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 
 import javax.sql.DataSource;
 
-/**
- * Created by Mr.Yangxiufeng on 2017/12/28.
- * Time:11:02
- * ProjectName:Mirco-Service-Skeleton
- */
 @Configuration
 @EnableAuthorizationServer
 public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapter {
