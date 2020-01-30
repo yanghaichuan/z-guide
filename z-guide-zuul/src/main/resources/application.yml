@@ -30,11 +30,11 @@ ribbon:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:19891/aau/user
+      user-info-uri: http://localhost:19891/sso/user
 #      prefer-token-info: false
     client:
      id: client_1
      client-secret: 123456
-     access-token-uri: http://localhost:19891/aau/oauth/token
+     access-token-uri: http://localhost:19891/sso/oauth/token
      grant-type: client_credentials,password
      scope: select

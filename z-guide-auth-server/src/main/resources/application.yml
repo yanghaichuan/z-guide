@@ -1,7 +1,7 @@
 server:
   port: 19891
   servlet:
-    context-path: /aau
+    context-path: /sso
 spring:
   application:
     name: guide-auth-server

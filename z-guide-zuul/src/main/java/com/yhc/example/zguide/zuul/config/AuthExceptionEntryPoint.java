@@ -1,6 +1,7 @@
 package com.yhc.example.zguide.zuul.config;
 
 import com.alibaba.fastjson.JSONObject;
+import com.yhc.example.zguide.common.util.Constant.MsgConstant;
 import com.yhc.example.zguide.common.util.reponse.R;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
@@ -26,12 +27,17 @@ public class AuthExceptionEntryPoint implements AuthenticationEntryPoint
         Throwable cause = authException.getCause();
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("code",500);
-        jsonObject.put("msg","无效token");
+        jsonObject.put("msg", MsgConstant.MSG_ERROR_TOKEN);
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json; charset=utf-8");
         PrintWriter out = null;
         try {
-            if(cause instanceof InvalidTokenException) {
+            if(cause == null){
+                jsonObject.put("code",500);
+                jsonObject.put("msg", MsgConstant.MSG_ERROR_EMPTY_TOKEN);
+                out = response.getWriter();
+                out.append(jsonObject.toString());
+            }else if(cause instanceof InvalidTokenException) {
                 out = response.getWriter();
                 out.append(jsonObject.toString());
             }

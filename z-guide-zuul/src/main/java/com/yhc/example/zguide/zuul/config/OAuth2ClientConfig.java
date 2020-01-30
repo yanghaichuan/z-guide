@@ -27,7 +27,7 @@ public class OAuth2ClientConfig {
         ClientCredentialsResourceDetails details = new ClientCredentialsResourceDetails();
         details.setClientId("client_1");
         details.setGrantType("client_credentials");
-        details.setAccessTokenUri("http://localhost:19891/aau/oauth/token");
+        details.setAccessTokenUri("http://localhost:19891/sso/oauth/token");
         details.setClientSecret("123456");
         details.setScope(scopes);
         return details;

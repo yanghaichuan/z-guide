@@ -1,14 +1,13 @@
 package com.yhc.example.zguide.auth.server.auth2.config;
 
 import com.yhc.example.zguide.auth.server.auth2.error.MssWebResponseExceptionTranslator;
-import com.yhc.example.zguide.auth.server.user.server.impl.UserDetailsServiceImpl;
+import com.yhc.example.zguide.auth.server.auth2.server.BaseUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.common.exceptions.OAuth2Exception;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -34,7 +33,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
     private DataSource dataSource;
 
     @Autowired
-    private UserDetailsServiceImpl userDetailsService;
+    private BaseUserDetailService userDetailsService;
 
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;

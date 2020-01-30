@@ -36,6 +36,11 @@ public class MsgConstant {
 	public static final String MSG_ERROR_TOKEN= "无效token";
 
 	/**
+	 * token为空
+	 */
+	public static final String MSG_ERROR_EMPTY_TOKEN= "token为空";
+
+	/**
 	 * 删除数据项不是全部所选
 	 * @param total
 	 * @param process
