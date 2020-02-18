@@ -1,4 +1,4 @@
-package com.yhc.example.zguide.zuul.config;
+package com.yhc.example.zguide.zuul.handler;
 
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.http.HttpStatus;

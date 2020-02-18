@@ -1,4 +1,4 @@
-package com.yhc.example.zguide.zuul.config;
+package com.yhc.example.zguide.zuul.handler;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

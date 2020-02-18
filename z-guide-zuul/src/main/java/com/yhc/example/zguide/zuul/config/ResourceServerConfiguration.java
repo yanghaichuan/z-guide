@@ -1,5 +1,8 @@
 package com.yhc.example.zguide.zuul.config;
 
+import com.yhc.example.zguide.zuul.handler.AuthExceptionEntryPoint;
+import com.yhc.example.zguide.zuul.handler.CustomAccessDeniedHandler;
+import com.yhc.example.zguide.zuul.handler.CustomTokenExtractor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
