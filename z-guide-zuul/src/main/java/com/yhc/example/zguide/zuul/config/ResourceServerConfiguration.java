@@ -26,10 +26,9 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     public void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-//                .antMatchers(
-//                        "/sso/login",
-//                        "/sso/api/exit")  //social（第三方登录） 开头不拦截
-//                .permitAll()
+                .antMatchers(
+                        "/system/**")  //不拦截路径
+                .permitAll()
                 .anyRequest().authenticated();
     }
 

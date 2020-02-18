@@ -2,16 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.yhc.example.zguide.auth.server.user.dao.UserAuthDaoMapper">
     <resultMap id="BaseResultMap" type="com.yhc.example.zguide.auth.server.user.modle.UserAuthEntity">
-        <id column="id" property="userId" jdbcType="BIGINT"/>
-        <result column="real_name" property="realName" jdbcType="VARCHAR"/>
-        <result column="login_name" property="loginName" jdbcType="VARCHAR"/>
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="real_name" property="nickName" jdbcType="VARCHAR"/>
+        <result column="login_name" property="username" jdbcType="VARCHAR"/>
         <result column="password" property="password" jdbcType="VARCHAR"/>
         <result column="phone" property="phone" jdbcType="VARCHAR"/>
         <result column="state" property="state" jdbcType="TINYINT"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id as userId, login_name as loginName, real_name as realName, password, state, phone
+        id, login_name as username, real_name as nickName, password, state, phone
     </sql>
 
     <select id="getUser" resultType="com.yhc.example.zguide.auth.server.user.modle.UserAuthEntity" parameterType="java.util.Map">

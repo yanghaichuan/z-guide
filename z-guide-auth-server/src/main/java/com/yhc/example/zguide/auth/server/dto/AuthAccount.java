@@ -1,14 +1,12 @@
-package com.yhc.example.zguide.auth.server.user.modle;
+package com.yhc.example.zguide.auth.server.dto;
 
-import com.yhc.example.zguide.auth.server.dto.MenuVo;
 import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
 @Data
-public class UserAuthEntity implements Serializable {
-    private static final long serialVersionUID = 7508743265494479449L;
+public class AuthAccount implements Serializable {
     /**
      * 主键
      */

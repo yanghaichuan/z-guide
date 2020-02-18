@@ -19,6 +19,11 @@ zuul:
       sensitiveHeaders:
       serviceId: guide-goods
       stripPrefix: false
+    provider-auth-server:
+      path: /sso/system/**
+      sensitiveHeaders:
+      serviceId: guide-auth-server
+      stripPrefix: false
   add-proxy-headers: true
   host:
     socket-timeout-millis: 10000
@@ -30,11 +35,11 @@ ribbon:
 security:
   oauth2:
     resource:
-      user-info-uri: http://localhost:19891/sso/user
+      user-info-uri: http://localhost:19891/user
 #      prefer-token-info: false
     client:
      id: client_1
      client-secret: 123456
-     access-token-uri: http://localhost:19891/sso/oauth/token
+     access-token-uri: http://localhost:19891/oauth/token
      grant-type: client_credentials,password
      scope: select

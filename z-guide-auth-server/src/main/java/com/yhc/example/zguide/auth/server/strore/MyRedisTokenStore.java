@@ -1,4 +1,4 @@
-package com.yhc.example.zguide.auth.server.auth2.config;
+package com.yhc.example.zguide.auth.server.strore;
 
 import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
