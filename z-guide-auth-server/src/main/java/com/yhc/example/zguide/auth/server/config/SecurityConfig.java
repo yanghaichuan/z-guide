@@ -34,7 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         //关闭csrf，拦截所有请求
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/oauth/remove_token","/actuator/*").permitAll()
+                .antMatchers("/oauth/remove_token","/actuator/*","/oauth/login").permitAll()
                 .anyRequest().authenticated();
     }
 

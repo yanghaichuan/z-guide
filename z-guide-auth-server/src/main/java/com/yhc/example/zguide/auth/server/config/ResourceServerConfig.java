@@ -28,7 +28,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         http
                 .exceptionHandling().authenticationEntryPoint(customAuthEntryPoint)
                 .and().authorizeRequests()
-                .antMatchers("/oauth/remove_token","/actuator/*").permitAll()
+                .antMatchers("/oauth/remove_token","/actuator/*","/oauth/login").permitAll()
                 .anyRequest().authenticated();
         ;
     }

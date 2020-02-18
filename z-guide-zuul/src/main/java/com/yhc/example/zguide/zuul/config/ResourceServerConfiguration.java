@@ -27,7 +27,7 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         http
                 .authorizeRequests()
                 .antMatchers(
-                        "/system/**")  //不拦截路径
+                        "/oauth/login")  //不拦截路径
                 .permitAll()
                 .anyRequest().authenticated();
     }

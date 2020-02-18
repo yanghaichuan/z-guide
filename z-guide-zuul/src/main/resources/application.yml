@@ -20,7 +20,7 @@ zuul:
       serviceId: guide-goods
       stripPrefix: false
     provider-auth-server:
-      path: /sso/system/**
+      path: /oauth/**
       sensitiveHeaders:
       serviceId: guide-auth-server
       stripPrefix: false
