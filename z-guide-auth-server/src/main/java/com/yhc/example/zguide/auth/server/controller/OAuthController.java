@@ -15,7 +15,7 @@ import java.security.Principal;
 import java.util.*;
 
 @RestController
-public class AuthController {
+public class OAuthController {
     @Resource
     @Qualifier("redisTokenStore")
     private TokenStore tokenStore;
