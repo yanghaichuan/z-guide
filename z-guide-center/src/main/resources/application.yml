@@ -2,13 +2,11 @@ server:
   port: 19880
 eureka:
   instance:
-    metadata-map:
-      lancher: test
-  server:
-      # 测试时关闭自我保护机制，保证不可用服务及时踢出
-      enable-self-preservation: false
+    hostname: 127.0.0.1
   client:
-    register-with-eureka: false
-    fetch-registry: false
     service-url:
-     defaultZone: http://localhost:19880/eureka/
+     defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      # 注册中心自身不注册flase，在注册中心集群开启true
+     register-with-eureka: false
+     # 注册中心，自身不做服务检索
+     fetch-registry: false
